@@ -1,6 +1,5 @@
 <?php
-session_start();
-include_once "db.upload.php";
+
 
 
 
@@ -14,18 +13,17 @@ if (isset($_POST['submit'])) {
     $fileType=$_FILES['file']['type'];
 
     $fileExt=explode('.',$fileName);
-    $fileActulExt=strtolower(end($fileExt));
+    $fileActualExt=strtolower(end($fileExt));
 
-    $allowed=array('jpg','jpeg',);
+    $allowed=array('jpg','jpeg');
 
-    if (in_array($fileActulExt,$allowed)) {
+    if (in_array($fileActualExt,$allowed)) {
         if ($fileError===0) {
             if ($fileSize<1000000) {
-               $fileNameNew="profile".'.'.$fileActulExt;
+               $fileNameNew="profile".'.'.$fileActualExt;
                $fileDestination='uploads/'.$fileNameNew;
                move_uploaded_file($fileTmpName,$fileDestination);
-               $sql="UPDATE profileimg SET status=0 WHERE userid='$id'";
-               $result=mysqli_query($conn,$sql);
+           
                header("location: recent.php?uploadsuccess");
             }else {
                 echo "asshole upload a file with less filesize";

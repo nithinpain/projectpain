@@ -1,7 +1,5 @@
 <?php
-session_start();
-include_once "db.upload.php";
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,44 +192,31 @@ include_once "db.upload.php";
                </ul>
              </div>
            </div>
-           </nav>
+ </nav>
 		
 
-	   <?php
-$sql="SELECT * FROM user ";
-$result=mysqli_query($conn,$sql);
-if (mysqli_num_rows($result)>0) {
-	while ($row=mysqli_fetch_assoc($result)) {
-		$id=$row['id'];
-	
-	
-
-$sqlimg="SELECT * FROM profileimg WHERE userid='$id'";
-$resultImg=mysqli_query($conn,$sqlimg);
-while($rowImg=mysqli_fetch_assoc($resultImg)){
-	echo "<div>";
-if ($rowImg['status']==0) {
-	echo "<img src='uploads/profile".$id.".jpg'>";
-	
-}else {
-	echo "<img src='uploads/profiledefault.jpg'>";
-}
-	echo "</div>";
-
-}
-}
-}
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <?php
 
 
-	   ?>
+
+    ?>
 	   <div class="up-class">
+
 	   <form action="upload.php" method="POST" enctype="multipart/form-data">
 	  <h3> choose a file to post </h3>
 	
 	
 	   <input type="file" name="file" >
-    <button type="submit" name="submit">upload</button>
-		
+	<button  type="submit" name="submit">upload</button>
+	
+
 </form>
 <div>
         

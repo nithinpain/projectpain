@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (isset($_POST['submitlogin'])) {
-    $_SESSION['id']=1;
-    header("location: post.php");
-}
+// session_start();
+// if (isset($_POST['submitlogin'])) {
+//     $_SESSION['id']=1;
+//     header("location: post.php");
+// }
 
 
 ?>
@@ -226,7 +226,12 @@ div.desc {
            </div>
            </nav>
        <div class="gallery">
-    <img  src="uploads/profile.jpg" alt="my posts" width="600" height="400">
+		<img  src="uploads/profile.jpg" alt="my posts" width="600" height="400">
+		
+
+	
+
+
   <div class="desc">this is your recent post</div>
 </div>
 </body>
