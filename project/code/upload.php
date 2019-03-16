@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
                $fileDestination='uploads/'.$fileNameNew;
                move_uploaded_file($fileTmpName,$fileDestination);
            
-               header("location: recent.php?uploadsuccess");
+               header("location: copyhome.html?uploadsuccess");
             }else {
                 echo "asshole upload a file with less filesize";
             }
