@@ -1,8 +1,6 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +10,17 @@ session_start();
 <title> Login Form</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+		$(document).ready(function() {
+		   function disablePrev() { window.history.forward() }
+		   window.onload = disablePrev();
+		   window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+		});
+	 </script>
+ 
 <style type="text/css">
 	.login-form {
 		width: 340px;
@@ -37,7 +45,7 @@ session_start();
     }
 </style>
 </head>
-<body>
+<body></body>
 <div class="login-form">
     <form action="pain/login.pain.php" method="POST">
         <h2 class="text-center">Log in</h2>       
@@ -56,7 +64,9 @@ session_start();
         </div>        
     </form>
     <p class="text-center"><a href="registration.php">Create an Account</a></p>
-    
-        </form>
+    </form>
 </div>
+</body>
+
+   </html>
                                		                            
